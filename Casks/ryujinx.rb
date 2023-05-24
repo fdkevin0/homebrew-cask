@@ -15,10 +15,14 @@ cask "ryujinx" do
 
   auto_updates true
 
+  depends_on macos: ">= :big_sur"
+
   app "Ryujinx.app"
 
+  uninstall quit: "org.ryujinx.Ryujinx"
+
   zap trash: [
-    "~/Library/Application Support/Ryujinx",
+    "~/.config/Ryujinx",
     "~/Library/Saved Application State/org.ryujinx.Ryujinx.savedState",
   ]
 end
